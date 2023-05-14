@@ -4,13 +4,13 @@
 // Default setting
 
 // Rasterization
-#define CFG_CELL_SIZE   0.03
-#define CFG_CELL_HEIGHT 0.02
+#define CFG_CELL_SIZE   0.30
+#define CFG_CELL_HEIGHT 0.20
 
 // Agent
-#define CFG_AGENT_HEIGHT    0.2
-#define CFG_AGENT_RADIUS    0.03
-#define CFG_AGENT_MAX_CLIMP 0.001
+#define CFG_AGENT_HEIGHT    2.0
+#define CFG_AGENT_RADIUS    0.6
+#define CFG_AGENT_MAX_CLIMP 0.9
 #define CFG_AGENT_MAX_SLOPE 45
 
 // Region
@@ -42,17 +42,8 @@ extern bool m_filterLedgeSpans;
 extern bool m_filterWalkableLowHeightSpans;
 
 ///
-/// @brief 读取地图
-///
-/// @param str 数据
-/// @return int 读取状态
-///
-extern int recast_loadFile(const char *str);
-extern int recast_loadArray(const float *v, const int vl, const int *f, const int fl);
-extern int recast_loadContent(const char *str);
-
-///
 /// @brief 构建 Navigation mesh
+/// @param filename 文件名, 相对路径
 /// @param cellSize 网格长度, 用来体素化
 /// @param cellHeight 网格高度, 体素高度
 /// @param agentHeight 角色高度
@@ -68,14 +59,6 @@ extern int recast_loadContent(const char *str);
 /// @param detailSampleMaxError 细节样本最大错误
 /// @return int 构建状态
 ///
-extern char *build( const char *c_filename, float cellSize, float cellHeight, float agentHeight, float agentRadius, float agentMaxClimp, float agentMaxSlope, float regionMinSize, float regionMergeSize, float edgeMaxLen, float edgeMaxError, float vertsPerPoly, float detailSampleDist, float detailSampleMaxError);
-
-///
-/// @brief 导出Navigation mesh 为obj文件
-///
-/// @param path 文件名及其路径
-/// @return int 状态
-///
-extern int exportAsObj(const char *path);
+extern int build(const char *filename, float cellSize, float cellHeight, float agentHeight, float agentRadius, float agentMaxClimp, int agentMaxSlope, int regionMinSize, int regionMergeSize, int edgeMaxLen, float edgeMaxError, int vertsPerPoly, int detailSampleDist, int detailSampleMaxError);
 
 #endif

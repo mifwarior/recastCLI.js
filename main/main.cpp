@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "../recast/Recast.h"
+#include "Recast.h"
 #include "build.h"
+#include <cstring>
 
 const char *c_filename;
 float 	c_cellSize;

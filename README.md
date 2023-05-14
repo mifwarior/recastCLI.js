@@ -5,26 +5,6 @@ A command line tools to build navigation mesh for game, which means you can auto
 
 > Based on [recastCLI](https://github.com/but0n/recastCLI.js) under MIT license
 
-## Building (`nodejs` branch)
-
-```shell
-$ npm install && npm run build
-```
-
-## Usage
-
-```js
-const recast = require('./build/Release/RecastCLI');
-
-recast.loadFile('myfile.obj');
-recast.loadContent('v -0.5 0 0.5@v -0.5 0 -0.5@...f 27 26 25@f 28 26 27@');
-recast.loadArray(new Float32Array(position), new Int32Array(index))
-
-recast.build(cellSize, cellHeight, agentHeight, agentRadius, agentMaxClimp, agentMaxSlope); // return string
-
-recast.save("navmesh.obj");
-```
-
 ----
 # Command line tools
 
@@ -32,9 +12,19 @@ At master branch
 
 ## Building
 
-![](https://user-images.githubusercontent.com/7625588/36931376-1824eb9e-1eef-11e8-84f6-02b93cfce723.png)
+mkdir build
+cd build
+cmake ..
+make
 
 ## Usage
+
+FROM:
+![](from.png)
+
+TO:
+
+![](image.png)
 
 ```shell
 $ ./RecastJS nav_test.obj 0 0 0 0 0 0 0 0 0 0 0 0 0 > navmesh.obj
@@ -58,6 +48,3 @@ $ ./RecastJS nav_test.obj 0 0 0 0 0 0 0 0 0 0 0 0 0 > navmesh.obj
  - vertsPerPoly
  - detailSampleDist
  - detailSampleMaxErro
-
-
-***Powered by cafe team***
