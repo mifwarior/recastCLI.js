@@ -68,7 +68,7 @@ extern int recast_loadContent(const char *str);
 /// @param detailSampleMaxError 细节样本最大错误
 /// @return int 构建状态
 ///
-extern char *build( float cellSize, float cellHeight, float agentHeight, float agentRadius, float agentMaxClimp, float agentMaxSlope, float regionMinSize, float regionMergeSize, float edgeMaxLen, float edgeMaxError, float vertsPerPoly, float detailSampleDist, float detailSampleMaxError);
+extern char *build( const char *c_filename, float cellSize, float cellHeight, float agentHeight, float agentRadius, float agentMaxClimp, float agentMaxSlope, float regionMinSize, float regionMergeSize, float edgeMaxLen, float edgeMaxError, float vertsPerPoly, float detailSampleDist, float detailSampleMaxError);
 
 ///
 /// @brief 导出Navigation mesh 为obj文件

@@ -54,6 +54,7 @@ int recast_loadContent(const char *str) {
 }
 
 char *build(
+	const char *c_filename,
     float 	cellSize,
     float 	cellHeight,
     float 	agentHeight,

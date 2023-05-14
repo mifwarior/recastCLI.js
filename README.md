@@ -3,9 +3,7 @@
 
 A command line tools to build navigation mesh for game, which means you can automatically generate navigation mesh on server or localhost in pipeline.
 
-> Based on [recastnavigation](https://github.com/recastnavigation/recastnavigation) under ZLib license
-
-# Nodejs addon
+> Based on [recastCLI](https://github.com/but0n/recastCLI.js) under MIT license
 
 ## Building (`nodejs` branch)
 
@@ -39,7 +37,7 @@ At master branch
 ## Usage
 
 ```shell
-$ ./RecastCLI nav_test.obj 0 0 0 0 0 0 0 0 0 0 0 0 0 > navmesh.obj
+$ ./RecastJS nav_test.obj 0 0 0 0 0 0 0 0 0 0 0 0 0 > navmesh.obj
 ```
  - Running at debug mode
  > Toggle with macro `#define DEBUG`
