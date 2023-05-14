@@ -12,10 +12,10 @@ At master branch
 
 ## Building
 
-mkdir build
-cd build
-cmake ..
-make
+* mkdir build
+* cd build
+* cmake ..
+* make
 
 ## Usage
 
