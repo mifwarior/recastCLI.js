@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.13)
+cmake_minimum_required(VERSION 3.12)
 
 PROJECT(recastjs)
 
@@ -7,4 +7,11 @@ if(UNIX)
 endif(UNIX)
 
 ADD_SUBDIRECTORY("recast")
-ADD_SUBDIRECTORY("main")
+
+if (NOT EMSCRIPTEN_VERSION)
+    ADD_SUBDIRECTORY("main")
+endif(NOT EMSCRIPTEN_VERSION)
+
+if(EMSCRIPTEN)
+    ADD_SUBDIRECTORY("web")
+endif(EMSCRIPTEN)

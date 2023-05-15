@@ -1,20 +1,18 @@
-cmake_minimum_required(VERSION 3.13)
+cmake_minimum_required(VERSION 3.12)
 
-SET(RECAST_JS_SRC
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/dist)
+
+SET(RECAST_CLI_SRC
     build.cpp
     main.cpp
-    ChunkyTriMesh.cpp
-    InputGeom.cpp
-    MeshLoaderObj.cpp
-    # port.cpp
 )
 
-ADD_EXECUTABLE(RecastJS
-            ${RECAST_JS_SRC})
+ADD_EXECUTABLE(RecastCLI
+            ${RECAST_CLI_SRC})
 
 include_directories(
     ./
     ../recast
 )
 
-TARGET_LINK_LIBRARIES(RecastJS RECAST_LIB)
+TARGET_LINK_LIBRARIES(RecastCLI RECAST_LIB)

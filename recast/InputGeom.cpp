@@ -369,7 +369,7 @@ bool InputGeom::loadContent(class rcContext* ctx, const std::string& content)
 		ctx->log(RC_LOG_ERROR, "loadMesh: Out of memory 'm_mesh'.");
 		return false;
 	}
-	if (!m_mesh->readString(content))
+	if (!m_mesh->loadFromString(content))
 	{
 		ctx->log(RC_LOG_ERROR, "buildTiledNavigation: Could not load current scenes.");
 		return false;

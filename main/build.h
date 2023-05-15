@@ -1,3 +1,9 @@
+#pragma once
+
+#include <string>
+#include <cstring>
+#include <sstream>
+
 #ifndef _BUILD_H_
 #define _BUILD_H_
 
@@ -60,5 +66,7 @@ extern bool m_filterWalkableLowHeightSpans;
 /// @return int 构建状态
 ///
 extern int build(const char *filename, float cellSize, float cellHeight, float agentHeight, float agentRadius, float agentMaxClimp, int agentMaxSlope, int regionMinSize, int regionMergeSize, int edgeMaxLen, float edgeMaxError, int vertsPerPoly, int detailSampleDist, int detailSampleMaxError);
+
+std::string buildObj(const std::string &arrayBuffer, float cellSize, float cellHeight, float agentHeight, float agentRadius, float agentMaxClimp, int agentMaxSlope, int regionMinSize, int regionMergeSize, int edgeMaxLen, float edgeMaxError, int vertsPerPoly, int detailSampleDist, int detailSampleMaxError);
 
 #endif

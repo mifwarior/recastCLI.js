@@ -10,12 +10,18 @@ A command line tools to build navigation mesh for game, which means you can auto
 
 At master branch
 
-## Building
+## Building (Standalone)
 
 * mkdir build
 * cd build
 * cmake ..
 * make
+
+## Building (Web)
+* mkdir buildWeb
+* cd buildWeb
+* emcmake cmake ..
+* emmake make
 
 ## Usage
 
