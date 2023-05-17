@@ -9,14 +9,13 @@
 <body>
     <script src="RecastJS.js"></script>
     <script>
-        Module.postRun = [];
-        Module.postRun.push(() => {
+
             fetch("nav_test.obj")
                 .then(r => r.text())
-                .then(text => Module.buildObj(text,0,0,0,0,0,0,0,0,0,0,0,0,0))
+                .then(text => Promise.all([text, window.createNavMeshBuilder()]))
+                .then(([text, buildObj]) => buildObj(text,0,0,0,0,0,0,0,0,0,0,0,0,0))
                 .then(console.log)
                 .catch(console.error)
-        })
     </script>
 </body>
 </html>
